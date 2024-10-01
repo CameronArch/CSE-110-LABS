@@ -38,8 +38,8 @@ html {
     background-color: #182b49;
     color: white;
     max-height: 500px;
-    overflow: scroll;
-    margin: 0 auto;
+    overflow-y: scroll;
+    
     
 }
 .two {
@@ -47,21 +47,21 @@ html {
     background-color: #182b49;
     color: white;
     max-height: 500px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .three {
     grid-column: 3;
     background-color: #182b49;
     color: white;
     max-height: 500px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .four {
     grid-column: 4;
     background-color: #182b49;
     color: white;
     max-height: 500px;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .one p {
     
