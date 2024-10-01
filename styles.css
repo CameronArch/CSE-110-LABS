@@ -1,24 +1,22 @@
-* {
+* { 
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 #Section\ 1 {
-    
+    padding: 25px;
     background-color: rgb(245, 240, 230);
     scroll-margin-top: 144px;
 }
 
 #Section\ 2 {
-    
+    padding: 25px;
     background-image: url("https://www.ucsd.edu/_resources/img/bg-orbs-1.jpg") ;
     color: white;
     scroll-margin-top: 144px;
 }
 
 #Section\ 3 {
-   
+    padding: 25px;
     background-color: rgb(245, 240, 230);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
