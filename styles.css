@@ -6,6 +6,7 @@
     padding: 25px;
     background-color: rgb(245, 240, 230);
     scroll-margin-top: 144px;
+    max-width: 100%;
 }
 
 #Section\ 2 {
@@ -13,6 +14,7 @@
     background-image: url("https://www.ucsd.edu/_resources/img/bg-orbs-1.jpg") ;
     color: white;
     scroll-margin-top: 144px;
+    max-width: 100%;
 }
 
 #Section\ 3 {
@@ -23,7 +25,7 @@
     grid-auto-rows: auto;
     gap: 25px;
     scroll-margin-top: 144px;
-    width: 100%;
+    max-width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -34,6 +36,7 @@
     color: white;
     max-height: 500px;
     overflow: scroll;
+    margin: 0 auto;
     
 }
 .two {
@@ -56,6 +59,22 @@
     color: white;
     max-height: 500px;
     overflow: scroll;
+}
+.one p {
+    
+    padding: 15px;
+}
+.two p {
+    
+    padding: 15px;
+}
+.three p {
+    
+    padding: 15px;
+}
+.four p {
+    
+    padding: 15px;
 }
 div {
     display: inline-block;
@@ -110,10 +129,86 @@ p {
     
 }
 h2 {
-    font-size: 28px;
+    font-size: 32px;
     padding: auto;
 }
 img {
 
     padding: auto;
+}
+
+@media screen and (max-width: 800px) {
+    ul {
+        display: none;
+    }
+    #Navbar img {
+        max-width: 75%;
+        padding: auto;
+    }
+    h2 {
+        font-size: 24px;
+        padding: auto;
+    }
+    p {
+        font-size: 20px;
+        padding: auto;
+    }
+    
+    #Section\ 3 {
+        padding: 25px;
+        background-color: rgb(245, 240, 230);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+        gap: 25px;
+        scroll-margin-top: 144px;
+        max-width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .one {
+        grid-column: 1;
+        background-color: #182b49;
+        color: white;
+        max-height: 500px;
+        overflow: scroll;
+        margin: 0 auto;
+    }
+    .two {
+        grid-column: 2;
+        background-color: #182b49;
+        color: white;
+        max-height: 500px;
+        overflow: scroll;
+    }
+    .three {
+        grid-column: 1;
+        background-color: #182b49;
+        color: white;
+        max-height: 500px;
+        overflow: scroll;
+    }
+    .four {
+        grid-column: 2;
+        background-color: #182b49;
+        color: white;
+        max-height: 500px;
+        overflow: scroll;
+    }
+    .one p {
+    
+        padding: 10px;
+    }
+    .two p {
+        
+        padding: 10px;
+    }
+    .three p {
+        
+        padding: 10px;
+    }
+    .four p {
+        
+        padding: 10px;
+    }
 }
