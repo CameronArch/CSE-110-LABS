@@ -1,15 +1,18 @@
 * { 
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 
-#Section\ 1 {
+#Section1 {
     padding: 25px;
     background-color: rgb(245, 240, 230);
     scroll-margin-top: 144px;
     max-width: 100%;
 }
 
-#Section\ 2 {
+#Section2 {
     padding: 25px;
     background-image: url("https://www.ucsd.edu/_resources/img/bg-orbs-1.jpg") ;
     color: white;
@@ -17,7 +20,7 @@
     max-width: 100%;
 }
 
-#Section\ 3 {
+#Section3 {
     padding: 25px;
     background-color: rgb(245, 240, 230);
     display: grid;
@@ -154,7 +157,7 @@ img {
         padding: auto;
     }
     
-    #Section\ 3 {
+    #Section3 {
         padding: 25px;
         background-color: rgb(245, 240, 230);
         display: grid;
