@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext, themes } from "./themeContext";
+import { Label, Note } from './types';
 
 export function ToggleTheme() {
     const [currentTheme, setCurrentTheme] = useState(themes.light);
@@ -7,12 +8,17 @@ export function ToggleTheme() {
     const toggleTheme = () => {
       setCurrentTheme(currentTheme === themes.light ? themes.dark : themes.light);
     };
-   
+    
+    useEffect(() => {
+      document.body.style.backgroundColor = currentTheme.background;
+      document.body.style.color = currentTheme.foreground;
+    }, [currentTheme]);
+
     return (
-      <ThemeContext.Provider value={currentTheme}>
+      <div>
         <button onClick={toggleTheme}> Toggle Theme </button>
-        <ClickCounter />
-      </ThemeContext.Provider>
+      </div>
+        
     );
 }
    
@@ -47,17 +53,34 @@ return (
    </div>
  );
 }
-   
-export function HeartButton() {
-    const [isClicked, setIsClicked] = useState(false);
+type SetNotesFunction = React.Dispatch<React.SetStateAction<Note[]>>;
+export function ToggleFavorite(id: number, setNotes: SetNotesFunction) {
+    setNotes((prevNotes) =>
+        prevNotes.map((note) =>
+            note.id === id ? { ...note, favorite: !note.favorite} : note
+        )
+    );
+}
+interface HeartButtonProps {
+    isFavorite: boolean;
+    onClick: () => void;
+}
 
-    const handleClick = () => {
-        setIsClicked(!isClicked);
-    };
-
+export function HeartButton({ isFavorite, onClick }: HeartButtonProps) {
     return (
-        <button onClick={handleClick}>
-            {isClicked ? "❤️" : "♡"}
+        <button onClick={onClick}>
+            {isFavorite ? "❤️" : "♡"}
         </button>
     )
+}
+
+export function RemoveNote(id:number, setNotes: SetNotesFunction) {
+    setNotes((prevNotes) =>
+        prevNotes.filter((note) => note.id !== id)
+    );
+  return (
+    <div>
+      <button onClick={() => RemoveNote}>x</button>
+    </div>
+  )
 }
