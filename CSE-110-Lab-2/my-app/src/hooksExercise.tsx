@@ -15,7 +15,7 @@ export function ToggleTheme() {
     }, [currentTheme]);
 
     return (
-      <div>
+      <div id="toggle">
         <button onClick={toggleTheme}> Toggle Theme </button>
       </div>
         
@@ -62,13 +62,20 @@ export function ToggleFavorite(id: number, setNotes: SetNotesFunction) {
     );
 }
 interface HeartButtonProps {
+    id: number;
     isFavorite: boolean;
-    onClick: () => void;
+    setNotes: SetNotesFunction;
 }
 
-export function HeartButton({ isFavorite, onClick }: HeartButtonProps) {
+export function HeartButton({ id, isFavorite, setNotes }: HeartButtonProps) {
+    const handleClick = () => {
+      setNotes((notes) =>
+        notes.map((note) =>
+            note.id === id ? {...note, favorite: !note.favorite} : note)
+    )};
+
     return (
-        <button onClick={onClick}>
+        <button onClick={handleClick}>
             {isFavorite ? "❤️" : "♡"}
         </button>
     )

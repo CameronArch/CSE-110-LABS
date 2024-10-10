@@ -13,8 +13,9 @@ function App() {
     label: Label.other,
     favorite: false,
   };
+
 const [selectedNote, setSelectedNote] = useState<Note>(initialNote);
- const [createNote, setCreateNote] = useState(initialNote);
+const [createNote, setCreateNote] = useState(initialNote);
  
  function createNoteHandler(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
@@ -72,7 +73,7 @@ const [selectedNote, setSelectedNote] = useState<Note>(initialNote);
            className="note-item">
            <div className="notes-header">
             
-              <HeartButton isFavorite={note.favorite} onClick={() => ToggleFavorite(note.id,setNotes)}/>
+              <HeartButton id={note.id} isFavorite={note.favorite} setNotes={setNotes}/>
             
               <button onClick={() => RemoveNote(note.id, setNotes)}>x</button>
            </div>
@@ -87,6 +88,7 @@ const [selectedNote, setSelectedNote] = useState<Note>(initialNote);
     
     </div>
     <div>
+    <ToggleTheme />
         <h2>List of Favorites:</h2>
         {notes.map((note) => (
         <p>
@@ -94,7 +96,7 @@ const [selectedNote, setSelectedNote] = useState<Note>(initialNote);
         </p>
         ))}
     </div>
-    <div><ToggleTheme /></div>
+    
     </div>
     
 
